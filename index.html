@@ -130,28 +130,31 @@
   .hero-bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
   .hero-bg-overlay{
     position:absolute;inset:0;z-index:1;
-    background:linear-gradient(180deg, rgba(59,34,38,.55) 0%, rgba(59,34,38,.15) 38%, rgba(59,34,38,.35) 65%, rgba(59,34,38,.88) 100%);
+    background:
+      linear-gradient(90deg, rgba(28,15,17,.85) 0%, rgba(28,15,17,.6) 42%, rgba(28,15,17,.18) 72%, rgba(28,15,17,.1) 100%),
+      linear-gradient(180deg, rgba(28,15,17,.65) 0%, rgba(28,15,17,.25) 32%, rgba(28,15,17,.42) 62%, rgba(28,15,17,.92) 100%);
   }
   .hero-inner{position:relative;z-index:2;width:100%;}
   .hero-copy{max-width:680px;}
   .hero-copy h1{
     color:var(--white);
     font-size:clamp(2.6rem, 4.6vw, 4.1rem);line-height:1.04;font-weight:600;
-    letter-spacing:-.01em;
+    letter-spacing:-.01em;text-shadow:0 2px 24px rgba(0,0,0,.35);
   }
   .hero-copy h1 em{font-style:italic;color:var(--pink-light);font-weight:500;}
-  .hero .eyebrow{color:var(--peach);}
+  .hero .eyebrow{color:var(--peach);text-shadow:0 1px 12px rgba(0,0,0,.4);}
   .hero .eyebrow::before{background:var(--pink-light);}
   .hero-copy p.lede{
-    margin-top:26px;font-size:1.18rem;line-height:1.65;color:rgba(253,247,243,.86);max-width:480px;
+    margin-top:26px;font-size:1.18rem;line-height:1.65;color:rgba(255,255,255,.92);max-width:480px;
+    text-shadow:0 1px 16px rgba(0,0,0,.35);
   }
   .hero-actions{display:flex;align-items:center;gap:18px;margin-top:40px;flex-wrap:wrap;}
   .hero .btn-ghost{color:var(--white);border-color:rgba(253,247,243,.4);}
   .hero .btn-ghost:hover{border-color:var(--white);background:rgba(253,247,243,.12);}
   .hero-badges{display:flex;gap:28px;margin-top:52px;flex-wrap:wrap;}
   .hero-badges .badge{display:flex;flex-direction:column;gap:2px;}
-  .hero-badges .badge b{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--peach);font-weight:600;}
-  .hero-badges .badge span{font-size:.78rem;color:rgba(253,247,243,.72);text-transform:uppercase;letter-spacing:.06em;}
+  .hero-badges .badge b{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--peach);font-weight:600;text-shadow:0 1px 12px rgba(0,0,0,.4);}
+  .hero-badges .badge span{font-size:.78rem;color:rgba(255,255,255,.85);text-transform:uppercase;letter-spacing:.06em;text-shadow:0 1px 12px rgba(0,0,0,.4);}
 
   .hero-floating-card{
     position:absolute;right:32px;bottom:40px;z-index:2;background:var(--white);
