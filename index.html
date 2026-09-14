@@ -1,11 +1,20 @@
 <title>Dra. Débora Bortoluzzi — Pediatria, Alergia & Imunologia Pediátrica</title>
 <meta name="description" content="Pediatria geral, alergia e imunologia pediátrica em Xanxerê, SC. Atendimento completo e acolhedor para crianças de 0 a 16 anos com a Dra. Débora Bortoluzzi.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
-
 <style>
+  @font-face{font-family:'Fraunces';font-style:italic;font-weight:400;font-display:swap;src:url('assets/fonts/fraunces-italic-0.woff2') format('woff2');}
+  @font-face{font-family:'Fraunces';font-style:italic;font-weight:500;font-display:swap;src:url('assets/fonts/fraunces-italic-0.woff2') format('woff2');}
+  @font-face{font-family:'Fraunces';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/fraunces-normal-1.woff2') format('woff2');}
+  @font-face{font-family:'Fraunces';font-style:normal;font-weight:500;font-display:swap;src:url('assets/fonts/fraunces-normal-1.woff2') format('woff2');}
+  @font-face{font-family:'Fraunces';font-style:normal;font-weight:600;font-display:swap;src:url('assets/fonts/fraunces-normal-1.woff2') format('woff2');}
+  @font-face{font-family:'Fraunces';font-style:normal;font-weight:700;font-display:swap;src:url('assets/fonts/fraunces-normal-1.woff2') format('woff2');}
+  @font-face{font-family:'Plus Jakarta Sans';font-style:italic;font-weight:400;font-display:swap;src:url('assets/fonts/plus-jakarta-sans-italic-2.woff') format('woff');}
+  @font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:400;font-display:swap;src:url('assets/fonts/plus-jakarta-sans-normal-3.woff2') format('woff2');}
+  @font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:500;font-display:swap;src:url('assets/fonts/plus-jakarta-sans-normal-3.woff2') format('woff2');}
+  @font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:600;font-display:swap;src:url('assets/fonts/plus-jakarta-sans-normal-3.woff2') format('woff2');}
+  @font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:700;font-display:swap;src:url('assets/fonts/plus-jakarta-sans-normal-3.woff2') format('woff2');}
+  @font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:800;font-display:swap;src:url('assets/fonts/plus-jakarta-sans-normal-3.woff2') format('woff2');}
+
   :root{
     --marsala:#A84E5E;
     --marsala-deep:#722F3E;
@@ -113,44 +122,39 @@
     .burger{display:flex;}
   }
 
-  /* ===== HERO ===== */
+  /* ===== HERO (full-bleed video) ===== */
   .hero{
-    padding:168px 0 110px;
-    background:
-      radial-gradient(ellipse 60% 50% at 85% 8%, rgba(242,164,122,.22), transparent 60%),
-      radial-gradient(ellipse 55% 45% at 8% 92%, rgba(236,137,182,.18), transparent 60%),
-      var(--cream);
-    overflow:hidden;
+    position:relative;min-height:96vh;display:flex;align-items:flex-end;
+    padding:168px 0 90px;overflow:hidden;color:var(--white);
   }
-  .hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center;}
+  .hero-bg-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+  .hero-bg-overlay{
+    position:absolute;inset:0;z-index:1;
+    background:linear-gradient(180deg, rgba(59,34,38,.55) 0%, rgba(59,34,38,.15) 38%, rgba(59,34,38,.35) 65%, rgba(59,34,38,.88) 100%);
+  }
+  .hero-inner{position:relative;z-index:2;width:100%;}
+  .hero-copy{max-width:680px;}
   .hero-copy h1{
+    color:var(--white);
     font-size:clamp(2.6rem, 4.6vw, 4.1rem);line-height:1.04;font-weight:600;
     letter-spacing:-.01em;
   }
-  .hero-copy h1 em{font-style:italic;color:var(--marsala);font-weight:500;}
+  .hero-copy h1 em{font-style:italic;color:var(--pink-light);font-weight:500;}
+  .hero .eyebrow{color:var(--peach);}
+  .hero .eyebrow::before{background:var(--pink-light);}
   .hero-copy p.lede{
-    margin-top:26px;font-size:1.18rem;line-height:1.65;color:var(--ink-soft);max-width:480px;
+    margin-top:26px;font-size:1.18rem;line-height:1.65;color:rgba(253,247,243,.86);max-width:480px;
   }
   .hero-actions{display:flex;align-items:center;gap:18px;margin-top:40px;flex-wrap:wrap;}
+  .hero .btn-ghost{color:var(--white);border-color:rgba(253,247,243,.4);}
+  .hero .btn-ghost:hover{border-color:var(--white);background:rgba(253,247,243,.12);}
   .hero-badges{display:flex;gap:28px;margin-top:52px;flex-wrap:wrap;}
   .hero-badges .badge{display:flex;flex-direction:column;gap:2px;}
-  .hero-badges .badge b{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--marsala);font-weight:600;}
-  .hero-badges .badge span{font-size:.78rem;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.06em;}
+  .hero-badges .badge b{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--peach);font-weight:600;}
+  .hero-badges .badge span{font-size:.78rem;color:rgba(253,247,243,.72);text-transform:uppercase;letter-spacing:.06em;}
 
-  .hero-visual{position:relative;}
-  .hero-frame{
-    position:relative;border-radius:38% 62% 55% 45% / 48% 42% 58% 52%;
-    overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow);
-    border:6px solid var(--white);
-  }
-  .hero-frame video, .hero-frame img{width:100%;height:100%;object-fit:cover;}
-  .hero-blob-deco{
-    position:absolute;border-radius:50%;z-index:-1;filter:blur(2px);
-  }
-  .deco-1{width:180px;height:180px;background:var(--pink-light);top:-40px;right:-40px;opacity:.7;}
-  .deco-2{width:120px;height:120px;background:var(--peach);bottom:40px;left:-50px;opacity:.5;}
   .hero-floating-card{
-    position:absolute;bottom:-30px;left:-36px;background:var(--white);
+    position:absolute;right:32px;bottom:40px;z-index:2;background:var(--white);
     border-radius:22px;padding:18px 22px;box-shadow:var(--shadow-sm);
     display:flex;align-items:center;gap:14px;max-width:250px;
   }
@@ -158,9 +162,8 @@
   .hero-floating-card p{font-size:.82rem;color:var(--ink-soft);margin-top:4px;}
 
   @media (max-width:960px){
-    .hero-inner{grid-template-columns:1fr;gap:56px;}
-    .hero{padding-top:130px;}
-    .hero-floating-card{left:16px;bottom:-24px;}
+    .hero{min-height:auto;padding-top:130px;}
+    .hero-floating-card{display:none;}
   }
 
   /* ===== TRUST STRIP ===== */
@@ -422,8 +425,13 @@
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="topo">
+  <video class="hero-bg-video" autoplay muted loop playsinline poster="assets/hero-medica-entrada.jpg">
+    <source src="assets/hero-video-sorriso.mp4" type="video/mp4">
+  </video>
+  <div class="hero-bg-overlay"></div>
   <div class="container hero-inner">
     <div class="hero-copy reveal is-visible">
+      <span class="eyebrow">Pediatria · Alergia & Imunologia Pediátrica</span>
       <h1>Cuidando da saúde <em>— e das alergias —</em> na infância.</h1>
       <p class="lede">Atendimento completo e atencioso, em um ambiente seguro e acolhedor, para crianças e adolescentes de 0 a 16 anos em Xanxerê, SC.</p>
       <div class="hero-actions">
@@ -439,22 +447,13 @@
         <div class="badge"><b>CRM SC</b><span>21140 · RQE 21190/21369</span></div>
       </div>
     </div>
+  </div>
 
-    <div class="hero-visual reveal reveal-delay-2 is-visible">
-      <div class="hero-frame">
-        <video autoplay muted loop playsinline poster="assets/medica-prateleiras.jpg">
-          <source src="assets/hero-video-sorriso.mp4" type="video/mp4">
-        </video>
-        <span class="hero-blob-deco deco-1"></span>
-      </div>
-      <span class="hero-blob-deco deco-2"></span>
-      <div class="hero-floating-card">
-        <span style="font-family:'Fraunces',serif;font-size:1.6rem;color:var(--marsala);font-weight:700;">4.9</span>
-        <div>
-          <div class="stars">★★★★★</div>
-          <p>Famílias atendidas com carinho</p>
-        </div>
-      </div>
+  <div class="hero-floating-card reveal reveal-delay-2 is-visible">
+    <span style="font-family:'Fraunces',serif;font-size:1.6rem;color:var(--marsala);font-weight:700;">4.9</span>
+    <div>
+      <div class="stars">★★★★★</div>
+      <p>Famílias atendidas com carinho</p>
     </div>
   </div>
 </section>
