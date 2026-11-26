@@ -142,7 +142,21 @@
   /* ===== FORMAS ORGÂNICAS (padrão da identidade visual) ===== */
   .blob{position:absolute;pointer-events:none;z-index:0;}
   section > .container, .cta-final .container{position:relative;z-index:1;}
-  .butterfly-deco{position:absolute;pointer-events:none;opacity:.9;z-index:0;}
+  .butterfly-deco{position:absolute;pointer-events:none;opacity:.9;z-index:0;animation:bf-fly 9s ease-in-out infinite;}
+  /* bater de asas: estreita a borboleta a partir do corpo, com pausas de planeio */
+  .butterfly-deco img{width:100%;display:block;transform-origin:28% 62%;animation:bf-flap 2.6s ease-in-out infinite;}
+  @keyframes bf-flap{
+    0%,46%,100%{transform:scaleX(1);}
+    7%,21%,35%{transform:scaleX(.42);}
+    14%,28%,42%{transform:scaleX(1);}
+  }
+  @keyframes bf-fly{
+    0%,100%{transform:translate(0,0) rotate(8deg);}
+    25%{transform:translate(-22px,-16px) rotate(0deg);}
+    50%{transform:translate(-8px,-32px) rotate(10deg);}
+    75%{transform:translate(14px,-12px) rotate(16deg);}
+  }
+  @media (prefers-reduced-motion: reduce){.butterfly-deco,.butterfly-deco img{animation:none;}}
 
   /* ===== HERO (split: foto à esquerda, texto à direita) ===== */
   .hero{
@@ -179,8 +193,8 @@
   .hero .b-peach{width:520px;top:-210px;right:-160px;opacity:.55;}
   .hero .b-pink{width:440px;bottom:-230px;left:-170px;opacity:.6;}
   .hero .b-dot{width:40px;bottom:120px;left:43%;}
-  .hero .butterfly-deco{width:74px;top:120px;right:7%;transform:rotate(8deg);}
-  @media (max-width:960px){.hero .b-peach{width:340px;top:-140px;right:-140px;} .hero .b-dot{display:none;} .hero .butterfly-deco{width:52px;top:96px;right:18px;}}
+  .hero .butterfly-deco{width:84px;top:270px;right:4%;}
+  @media (max-width:960px){.hero .b-peach{width:340px;top:-140px;right:-140px;} .hero .b-dot{display:none;} .hero .butterfly-deco{width:54px;top:660px;right:18px;}}
   .hero-floating-card{
     position:absolute;bottom:-30px;right:-36px;background:var(--white);
     border-radius:22px;padding:18px 22px;box-shadow:var(--shadow-sm);
@@ -470,7 +484,7 @@
   <svg class="blob b-peach" viewBox="0 0 200 200" aria-hidden="true"><path fill="#DE9E7B" d="M44.7,-58.5C57.1,-47.7,66,-33.5,70.6,-17.6C75.2,-1.7,75.5,15.9,68.4,29.7C61.3,43.5,46.8,53.5,31.2,60.6C15.6,67.7,-1.1,71.9,-17.6,68.9C-34.1,65.9,-50.4,55.7,-60.6,41.2C-70.8,26.7,-74.9,7.9,-71.3,-9.1C-67.7,-26.1,-56.4,-41.3,-42.4,-52C-28.4,-62.7,-14.2,-68.9,1.1,-70.3C16.4,-71.7,32.3,-69.3,44.7,-58.5Z" transform="translate(100 100)"/></svg>
   <svg class="blob b-pink" viewBox="0 0 200 200" aria-hidden="true"><path fill="#E7BBC9" d="M38.1,-49.9C49.1,-39.5,57.4,-27,61.6,-12.6C65.8,1.8,65.9,18.1,58.9,30.5C51.9,42.9,37.8,51.4,22.7,57.9C7.6,64.4,-8.5,68.9,-23.4,65.2C-38.3,61.5,-52,49.6,-60.1,34.8C-68.2,20,-70.7,2.3,-66.4,-13.2C-62.1,-28.7,-51,-42,-37.9,-52.1C-24.8,-62.2,-12.4,-69.1,0.9,-70.2C14.2,-71.3,27.1,-60.3,38.1,-49.9Z" transform="translate(100 100)"/></svg>
   <svg class="blob b-dot" viewBox="0 0 200 200" aria-hidden="true"><path fill="#895058" d="M38.1,-49.9C49.1,-39.5,57.4,-27,61.6,-12.6C65.8,1.8,65.9,18.1,58.9,30.5C51.9,42.9,37.8,51.4,22.7,57.9C7.6,64.4,-8.5,68.9,-23.4,65.2C-38.3,61.5,-52,49.6,-60.1,34.8C-68.2,20,-70.7,2.3,-66.4,-13.2C-62.1,-28.7,-51,-42,-37.9,-52.1C-24.8,-62.2,-12.4,-69.1,0.9,-70.2C14.2,-71.3,27.1,-60.3,38.1,-49.9Z" transform="translate(100 100)"/></svg>
-  <img class="butterfly-deco" src="assets/logo-borboleta.png" alt="" aria-hidden="true">
+  <span class="butterfly-deco" aria-hidden="true"><img src="assets/logo-borboleta.png" alt=""></span>
   <div class="container hero-inner">
     <div class="hero-visual reveal is-visible">
       <div class="hero-frame">
